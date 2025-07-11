@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  body {
+    @apply bg-gradient-to-br from-slate-50 to-slate-100 min-h-screen;
+  }
+}
+
+@layer components {
+  .redacted-icon {
+    @apply inline-block bg-gray-800 text-gray-800 select-none rounded px-2 py-1 mx-1;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+  }
+  
+  .slide-pill {
+    @apply rounded-full px-8 py-6 shadow-xl backdrop-blur-sm border border-white/20;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+  }
+  
+  .slide-pill-main {
+    @apply rounded-full px-12 py-8 shadow-xl backdrop-blur-sm border border-white/20;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    aspect-ratio: 3/1;
+    max-height: 400px;
+  }
+  
+  .slide-pill-pastel-shine {
+    @apply rounded-full px-12 py-8 backdrop-blur-sm border border-gray-200/30;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+    aspect-ratio: 3/1;
+    max-height: 400px;
+    box-shadow: 
+      0 20px 25px -5px rgba(0, 0, 0, 0.1),
+      0 8px 10px -6px rgba(0, 0, 0, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.6),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+  }
+  
+  .slide-pill-vertical {
+    @apply rounded-full px-4 py-3 shadow-xl backdrop-blur-sm border border-white/20;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    aspect-ratio: 2/1;
+  }
+  
+  .vertical-carousel-container {
+    @apply relative;
+  }
+  
+  .vertical-carousel-track {
+    @apply animate-vertical-carousel;
+    height: calc(200% + 4rem);
+  }
+}
+
+.audio-player {
+  @apply w-full max-w-md mx-auto;
+}
+
+.download-link {
+  @apply inline-flex items-center gap-2 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors;
+}
